@@ -72,5 +72,4 @@ The following **4 ML lab programs** have been successfully implemented as **end-
 
 ---
 
-## 📂 Project Structure (Simplified)
 
