@@ -1,0 +1,28 @@
+# Virtual Environment
+venv/
+.env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Uploaded files (optional)
+static/uploads/
+
+# Model files (OPTIONAL - see note below)
+# Uncomment if you DON'T want to push trained models
+# model/*.pkl
+# model/*.h5

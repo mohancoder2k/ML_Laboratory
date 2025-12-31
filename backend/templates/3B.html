@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Digit Test</title>
+</head>
+<body>
+
+<h2>Digit Recognition</h2>
+
+<input type="file" id="digitFile">
+<button id="btn">Predict</button>
+
+<div id="output"></div>
+
+<script>
+alert("JS LOADED");
+
+document.getElementById("btn").addEventListener("click", function () {
+    alert("Button clicked");
+
+    const file = document.getElementById("digitFile").files[0];
+    if (!file) {
+        alert("No file selected");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("digit", file);
+
+    fetch("http://localhost:5000/api/predict", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert("Response received");
+        console.log(data);
+        document.getElementById("output").innerText =
+            "Predicted Digit: " + JSON.stringify(data);
+    })
+    .catch(err => {
+        console.error(err);
+        alert("Fetch failed");
+    });
+});
+</script>
+
+</body>
+</html>
